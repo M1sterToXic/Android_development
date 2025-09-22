@@ -1,7 +1,7 @@
 import kotlin.random.Random
+import kotlin.concurrent.thread
 
-class Human
-{
+open class Human {
     var name: String = ""
     var surname: String = ""
     var second_name: String = ""
@@ -12,7 +12,7 @@ class Human
     var x = 0.0
     var y = 0.0
 
-    constructor(_name: String, _surname: String, _second: String, _gn: Int, _age: Int, _speed: Double){
+    constructor(_name: String, _surname: String, _second: String, _gn: Int, _age: Int, _speed: Double) {
         name = _name
         surname = _surname
         second_name = _second
@@ -22,50 +22,52 @@ class Human
         println("Создан: $name")
     }
 
-    fun move()
-    {
+    open fun move() {
         val direction = Random.nextDouble(0.0, 2 * Math.PI)
         val randomSpeed = currentSpeed * Random.nextDouble(0.5, 1.5)
-
         x += randomSpeed * Math.cos(direction)
         y += randomSpeed * Math.sin(direction)
-
         println("$name переместился в (${"%.1f".format(x)}, ${"%.1f".format(y)})")
-    }
-
-    fun moveTo(_toX: Int, _toY: Int)
-    {
-        x = _toX.toDouble()
-        y = _toY.toDouble()
-        println("$name перемещен В: $x,$y")
     }
 }
 
-fun main(){
-    val people = arrayOf(
-        Human("Petya","Ivanov","Petrovich",444, 20, 1.5),
-        Human("Zui-ay","Nguen","Kueevich",434, 22, 1.8),
-        Human("Kirril","Krachmalniy","Vladimirovich",344, 21, 1.2),
-        Human("Mihail","Sinicha","Alecksandrovich",443, 23, 2.0),
-        Human("Nikita","Krivolapov","Alekseevich",433, 19, 1.6)
+class Driver : Human {
+    var car: String = "car"
+
+    constructor(_name: String, _surname: String, _second: String, _gn: Int, _age: Int, _speed: Double) :
+            super(_name, _surname, _second, _gn, _age, _speed)
+
+    override fun move() {
+        val direction = 0.0
+        x += currentSpeed * Math.cos(direction)
+        y += currentSpeed * Math.sin(direction)
+        println("$name (Driver) переместился в (${"%.1f".format(x)}, ${"%.1f".format(y)})")
+    }
+}
+
+fun main() {
+    val humans = arrayOf(
+        Human("Petya", "Ivanov", "Petrovich", 444, 20, 1.5),
+        Human("Kirill", "Krachmalniy", "Vladimirovich", 344, 21, 1.2),
+        Human("Mihail", "Sinicha", "Alecksandrovich", 443, 23, 2.0)
     )
 
-    val simulationTime = 5
-    val timeSteps = 10
+    val driver = Driver("Nikita", "Krivolapov", "Alekseevich", 433, 19, 3.0)
 
-    println("Симуляция началась на $simulationTime секунд")
-    println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    val all = humans + driver
 
-    for (step in 1..timeSteps) {
-        println("\nШаг $step:")
-        println("▼-▼-▼-▼-▼-▼-▼-▼-▼-▼")
-        people.forEach { it.move() }
-        println("▼-▼-▼-▼-▼-▼-▼-▼-▼-▼")
+    val threads = all.map { h ->
+        thread {
+            repeat(5) {
+                h.move()
+            }
+        }
     }
 
-    println("\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-    println("Финальные позиции:")
-    people.forEach {
+    threads.forEach { it.join() }
+
+    println("\nФинальные позиции:")
+    all.forEach {
         println("${it.name}: (${"%.1f".format(it.x)}, ${"%.1f".format(it.y)})")
     }
 }
