@@ -15,17 +15,19 @@ fun main() {
 
     val threads = all.map { h ->
         thread {
-            repeat(5) {
+            for (i in 1..5) {
                 h.move()
             }
         }
     }
 
-    threads.forEach { it.join() }
+    for (thread in threads) {
+        thread.join()
+    }
 
     println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     println("\nФинальные позиции:")
-    all.forEach {
-        println("${it.name}: (${"%.1f".format(it.x)}, ${"%.1f".format(it.y)})")
+    for (person in all) {
+        println("${person.name}: (${"%.1f".format(person.x)}, ${"%.1f".format(person.y)})")
     }
 }
