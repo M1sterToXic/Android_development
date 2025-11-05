@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Мои Приложения"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_calculator"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#40FF00"
+        android:text="🧮 Калькулятор"
+        android:textColor="#0D0C0C"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginTop="40dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_music_player"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#40FF00"
+        android:text="🎵 Музыкальный Плеер"
+        android:textColor="#0D0C0C"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculator"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_app3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#9090E4"
+        android:enabled="false"
+        android:text="Приложение 3"
+        android:textColor="#0D0C0C"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_music_player"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_app4"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#9090E4"
+        android:enabled="false"
+        android:text="Приложение 4"
+        android:textColor="#0D0C0C"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_app3"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
