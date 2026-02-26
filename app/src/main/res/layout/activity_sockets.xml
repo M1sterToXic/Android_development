@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#282828"
+        tools:context=".SocketsActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="32dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ZMQ Сокеты"
+                android:textColor="#40FF00"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginBottom="32dp" />
+
+        <TextView
+                android:id="@+id/serverView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Сервер: Запущен на порту 12345"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:background="#333333"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp" />
+
+        <TextView
+                android:id="@+id/clientView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Клиент: Готов к отправке"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:background="#333333"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp" />
+
+        <EditText
+                android:id="@+id/server_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="IP сервера для PC"
+                android:text="192.168."
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"
+                android:backgroundTint="#9090E4"
+                android:layout_marginBottom="16dp" />
+
+        <EditText
+                android:id="@+id/client_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите сообщение"
+                android:text="Hello from Android!"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"
+                android:backgroundTint="#9090E4"
+                android:layout_marginBottom="16dp" />
+
+        <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Отправлять на PC"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp" />
+
+        <Button
+                android:id="@+id/sendBttn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#40FF00"
+                android:text="Отправить сообщение"
+                android:textColor="#0D0C0C"
+                android:textSize="18sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
