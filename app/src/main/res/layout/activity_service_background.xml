@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#121212"
+        android:fillViewport="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".ServiceBackgroundActivity">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊 Фоновая служба"
+                android:textColor="#40FF00"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/locationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1E1E1E"
+                android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍 МЕСТОПОЛОЖЕНИЕ"
+                        android:textColor="#40FF00"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Широта:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+                    <TextView
+                            android:id="@+id/latitude_service"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ожидание GPS..."
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Долгота:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+                    <TextView
+                            android:id="@+id/longitude_service"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ожидание GPS..."
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Высота:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+                    <TextView
+                            android:id="@+id/altitude_service"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ожидание GPS..."
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Точность:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+                    <TextView
+                            android:id="@+id/accuracy_service"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ожидание GPS..."
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                    <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Время:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+                    <TextView
+                            android:id="@+id/current_time_service"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ожидание GPS..."
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end"
+                        android:layout_marginTop="8dp">
+                    <TextView
+                            android:id="@+id/update_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="●"
+                            android:textColor="#9E9E9E"
+                            android:textSize="12sp"
+                            android:layout_marginEnd="4dp" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Обновление каждые 5 сек"
+                            android:textColor="#40FF00"
+                            android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/cellularCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1E1E1E"
+                android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📶 СОТОВАЯ СВЯЗЬ"
+                        android:textColor="#40FF00"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="16dp">
+
+                    <Button
+                            android:id="@+id/bttn_lte"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#16c603"
+                            android:text="LTE"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="4dp" />
+
+                    <Button
+                            android:id="@+id/bttn_gsm"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#16c603"
+                            android:text="GSM"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp" />
+
+                    <Button
+                            android:id="@+id/bttn_nr"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#16c603"
+                            android:text="NR"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="4dp" />
+
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/CellIdentity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Выберите тип сети"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="#2A2A2A"
+                        android:padding="8dp"
+                        android:layout_marginBottom="8dp" />
+
+                <ListView
+                        android:id="@+id/list_cell_info1"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#2A2A2A"
+                        android:divider="#40FF00"
+                        android:dividerHeight="1dp"
+                        android:scrollbars="vertical"
+                        android:nestedScrollingEnabled="true"
+                        android:layout_marginBottom="8dp" />
+
+                <TextView
+                        android:id="@+id/CellSignalStrength"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Сигнал"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:background="#2A2A2A"
+                        android:padding="8dp"
+                        android:layout_marginBottom="8dp" />
+
+                <ListView
+                        android:id="@+id/list_cell_info2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="#2A2A2A"
+                        android:divider="#40FF00"
+                        android:dividerHeight="1dp"
+                        android:scrollbars="vertical"
+                        android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/trafficCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1E1E1E"
+                android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊 ТРАФИК"
+                        android:textColor="#40FF00"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="#2A2A2A"
+                        android:padding="12dp"
+                        android:layout_marginBottom="12dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Всего: "
+                            android:textColor="#9E9E9E"
+                            android:textSize="16sp" />
+
+                    <TextView
+                            android:id="@+id/traffic_total"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Рассчет трафика..."
+                            android:textColor="#40FF00"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:gravity="end" />
+                </LinearLayout>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Топ приложений:"
+                        android:textColor="#9E9E9E"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="8dp" />
+
+                <ListView
+                        android:id="@+id/top_apps_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="#2A2A2A"
+                        android:divider="#40FF00"
+                        android:dividerHeight="1dp"
+                        android:scrollbars="vertical"
+                        android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/serverCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#1E1E1E"
+                android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🖥️ НАСТРОЙКИ СЕРВЕРА"
+                        android:textColor="#40FF00"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#2A2A2A"
+                        android:padding="12dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="IP адрес сервера:"
+                            android:textColor="#9E9E9E"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="4dp" />
+
+                    <EditText
+                            android:id="@+id/server_ip_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="192.168.0.11"
+                            android:text="192.168.0.11"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#6A6A6A"
+                            android:background="#1E1E1E"
+                            android:padding="12dp"
+                            android:inputType="text"
+                            android:singleLine="true" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Порт: 5555 (фиксированный)"
+                            android:textColor="#9E9E9E"
+                            android:textSize="14sp"
+                            android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
