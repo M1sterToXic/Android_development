@@ -66,12 +66,11 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/btn_app4"
+        android:id="@+id/btn_sockets"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:backgroundTint="#9090E4"
-        android:enabled="false"
-        android:text="Приложение 4"
+        android:backgroundTint="#40FF00"
+        android:text="🔌 ZMQ Сокеты"
         android:textColor="#0D0C0C"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
