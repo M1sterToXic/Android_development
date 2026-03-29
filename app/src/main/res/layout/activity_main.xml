@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:backgroundTint="#40FF00"
-            android:text="📊 Фоновая служба"
+            android:text="📊 Удалённый сервер"
             android:textColor="#0D0C0C"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"

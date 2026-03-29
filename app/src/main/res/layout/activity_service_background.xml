@@ -24,6 +24,39 @@
                 android:gravity="center"
                 android:layout_marginBottom="24dp" />
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+            <Button
+                    android:id="@+id/bStartBg"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#16c603"
+                    android:text="СТАРТ"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="4dp" />
+
+            <Button
+                    android:id="@+id/bStopBg"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FF4444"
+                    android:text="СТОП"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Карточка местоположения (без изменений) -->
         <androidx.cardview.widget.CardView
                 android:id="@+id/locationCard"
                 android:layout_width="match_parent"
@@ -158,32 +191,11 @@
                             android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="end"
-                        android:layout_marginTop="8dp">
-                    <TextView
-                            android:id="@+id/update_indicator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="●"
-                            android:textColor="#9E9E9E"
-                            android:textSize="12sp"
-                            android:layout_marginEnd="4dp" />
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Обновление каждые 5 сек"
-                            android:textColor="#40FF00"
-                            android:textSize="12sp" />
-                </LinearLayout>
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+        <!-- Карточка сотовой связи (без изменений) -->
         <androidx.cardview.widget.CardView
                 android:id="@+id/cellularCard"
                 android:layout_width="match_parent"
@@ -258,7 +270,7 @@
                         android:id="@+id/CellIdentity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Выберите тип сети"
+                        android:text="Текущий тип: LTE"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -282,7 +294,7 @@
                         android:id="@+id/CellSignalStrength"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Сигнал"
+                        android:text="CellSignalStrengthLTE"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -305,6 +317,7 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!-- Карточка трафика (без изменений) -->
         <androidx.cardview.widget.CardView
                 android:id="@+id/trafficCard"
                 android:layout_width="match_parent"
@@ -357,28 +370,11 @@
                             android:gravity="end" />
                 </LinearLayout>
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Топ приложений:"
-                        android:textColor="#9E9E9E"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="8dp" />
-
-                <ListView
-                        android:id="@+id/top_apps_list"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:background="#2A2A2A"
-                        android:divider="#40FF00"
-                        android:dividerHeight="1dp"
-                        android:scrollbars="vertical"
-                        android:nestedScrollingEnabled="true" />
-
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+        <!-- НОВАЯ КАРТОЧКА НАСТРОЕК СЕРВЕРА -->
         <androidx.cardview.widget.CardView
                 android:id="@+id/serverCard"
                 android:layout_width="match_parent"

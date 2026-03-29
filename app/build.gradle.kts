@@ -46,8 +46,9 @@ dependencies {
     implementation(libs.androidx.gridlayout)
 
     implementation("org.zeromq:jeromq:0.5.3")
-
     implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

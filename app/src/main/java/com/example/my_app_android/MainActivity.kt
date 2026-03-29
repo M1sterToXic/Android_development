@@ -17,28 +17,23 @@ class MainActivity : AppCompatActivity() {
         val btnServiceBackground = findViewById<Button>(R.id.btn_service_background)
 
         btnCalculator.setOnClickListener {
-            val intent = Intent(this, CalculatorActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, CalculatorActivity::class.java))
         }
 
         btnMusicPlayer.setOnClickListener {
-            val intent = Intent(this, MusicPlayerActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MusicPlayerActivity::class.java))
         }
 
         btnLocation.setOnClickListener {
-            val intent = Intent(this, LocationActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, LocationActivity::class.java))
         }
 
         btnSockets.setOnClickListener {
-            val intent = Intent(this, SocketsActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, SocketsActivity::class.java))
         }
 
         btnServiceBackground.setOnClickListener {
-            val intent = Intent(this, ServiceBackgroundActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, ServiceBackgroundActivity::class.java))
         }
     }
 }
